@@ -44,5 +44,15 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'pry-rails'
+  gem 'omniauth'
+  gem 'omniauth-twitter'
+  gem 'settingslogic'
+  gem 'less-rails'
+  gem 'therubyracer'
+  gem 'execjs'
+  gem 'twitter-bootstrap-rails'
+  gem 'momentjs-rails'
+  gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
+  gem 'simple_form'
 end
 
