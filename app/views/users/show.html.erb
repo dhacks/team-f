@@ -24,7 +24,9 @@
   </ul>
   <% end %>
   <br>
+  <% if !@user.foods.nil? %>
   <h4><%= @user.nickname %>さんの投稿一覧 </h4>
+  <% end %>
 <tbody>
 <ul>
 <% @user.foods.each do |food| %>
@@ -36,8 +38,7 @@
         <td><%= image_tag(food.image.url(:thumb)) %></td>
         <% if current_user.id == @user.id %>
         <td>
-        <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_food_path(food), :class => 'btn btn-default btn-xs' %>
+
         <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       food_path(food),
                       :method => :delete,

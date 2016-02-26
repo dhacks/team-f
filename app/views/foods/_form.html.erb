@@ -1,4 +1,5 @@
 <%= simple_form_for @food, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :user_id, :as => :hidden, input_html: { value: current_user.id} %>
   <%= f.input :title %>
   <%= error_span(@food[:title]) %>
   <%= f.input :content %>
@@ -15,3 +16,8 @@
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 foods_path, :class => 'btn btn-default' %>
 <% end %>
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
