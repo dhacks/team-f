@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
+  devise_for :users
   resources :foods
+  resources :requests, only: [:create, :edit]
+  resources :users, only: :show
+
+  root  'foods#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

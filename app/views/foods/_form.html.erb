@@ -1,13 +1,16 @@
 <%= simple_form_for @food, :html => { :class => 'form-horizontal' } do |f| %>
   <%= f.input :title %>
-  <%= error_span(:title) %>
+  <%= error_span(@food[:title]) %>
   <%= f.input :content %>
   <%= error_span(@food[:content]) %>
   <%= f.input :place %>
   <%= error_span(@food[:place]) %>
-  <%= f.input :date %>
+  <%= f.input :date, as: :datetime_picker %>
   <%= error_span(@food[:date]) %>
-
+  <%= f.input :cost %>
+  <%= error_span(@food[:cost]) %>
+  <%= f.file_field :image %>
+  <%= error_span(@food[:image]) %>
   <%= f.button :submit, :class => 'btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
                 foods_path, :class => 'btn btn-default' %>

@@ -50,9 +50,11 @@ group :development do
   gem 'less-rails'
   gem 'therubyracer'
   gem 'execjs'
-  gem 'twitter-bootstrap-rails'
+  gem 'twitter-bootstrap-rails', '3.2.0'
   gem 'momentjs-rails'
   gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
   gem 'simple_form'
+  gem 'devise'
+  gem 'paperclip'
 end
 
