@@ -6,7 +6,7 @@
     </div>
     <div class="col-sm-8">
       <h3><%= @user.nickname %> <span>さんのマイページ</span></h3>
-      <ul>Faculity : <%= @user.faculity %></ul>
+      <ul>Faculty : <%= @user.faculity %></ul>
       <ul>Grade : <%= @user.year %></ul>
       <ul>Sex : <%= @user.sex %></ul>
       <ul>Place : <%= @user.place %></ul>
@@ -26,7 +26,7 @@
   <br>
   <% if !@user.foods.nil? %>
   <h4><%= @user.nickname %>さんの投稿一覧 </h4>
-  <% end %>
+
 <tbody>
 <ul>
 <% @user.foods.each do |food| %>
@@ -47,6 +47,7 @@
           </td>
         <% end %>
       </tr>
+<% end %>
 <% end %>
   </ul>
   </tbody>

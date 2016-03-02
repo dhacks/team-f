@@ -20,9 +20,17 @@
   </h4>
 </div>
 <br>
+<% if user_signed_in? %>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_food_path,
             :class => 'btn btn-danger' %>
+<% else %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            root_path,
+            :class => 'btn btn-danger' %>
+
+<% end %>
+
 
 <div class="container" style="padding:20px 0">
     <!-- 投稿一覧 -->
@@ -34,7 +42,11 @@
       <div class="col-sm-3">
         <div style="margin-top:60px;">
           <div class="form-group">
+          <% if user_signed_in? %>
             <%= link_to "投稿者情報を見る", user_path(food.user_id), { :class => "btn btn-primary"} %>
+          <% else %>
+            <%= link_to "投稿者情報を見る", "foods#index", { :class => "btn btn-primary"} %>
+          <% end %>
           </div>
         </div>
         <div style="margin-top:20px;">
@@ -46,10 +58,10 @@
       <div class="col-sm-6">
         <div style="margin-top:40px;">
           <div class="col-sm-6">
-              
+
               <div align="" style="margin-top:20px;">
                 <div class=" control-label" for="food">
-                  タイトル: <%= food.title %>
+                <h4>タイトル: <%= food.title %></h4>
                 </div>
               </div>
               <div align="" style="margin-top:20px;">
@@ -92,8 +104,8 @@
 
       <div align="center">
         <ul class="pagination">
-          <li><a href="disabled">&laquo;</a></li>
-          <li><a href="active">1</a></li>
+          <li><a href="">&laquo;</a></li>
+          <li><a href="">1</a></li>
           <li><a href="">2</a></li>
           <li><a href="">3</a></li>
           <li><a href=""></a></li>

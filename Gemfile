@@ -56,5 +56,8 @@ group :development do
   gem 'simple_form'
   gem 'devise'
   gem 'paperclip'
+group :production, :staging do
+  gem 'rails_12factor'
+end
 end
 
